@@ -1,0 +1,10 @@
+E:\VS2022_WorkSpeace\STM32_Assistant\bin\Release\STM32_Assistant.exe.config
+E:\VS2022_WorkSpeace\STM32_Assistant\bin\Release\STM32_Assistant.exe
+E:\VS2022_WorkSpeace\STM32_Assistant\bin\Release\STM32_Assistant.pdb
+E:\VS2022_WorkSpeace\STM32_Assistant\obj\Release\STM32_Assistant.csproj.AssemblyReference.cache
+E:\VS2022_WorkSpeace\STM32_Assistant\obj\Release\STM32_Assistant.Form1.resources
+E:\VS2022_WorkSpeace\STM32_Assistant\obj\Release\STM32_Assistant.Properties.Resources.resources
+E:\VS2022_WorkSpeace\STM32_Assistant\obj\Release\STM32_Assistant.csproj.GenerateResource.cache
+E:\VS2022_WorkSpeace\STM32_Assistant\obj\Release\STM32_Assistant.csproj.CoreCompileInputs.cache
+E:\VS2022_WorkSpeace\STM32_Assistant\obj\Release\STM32_Assistant.exe
+E:\VS2022_WorkSpeace\STM32_Assistant\obj\Release\STM32_Assistant.pdb
