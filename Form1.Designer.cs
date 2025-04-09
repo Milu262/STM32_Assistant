@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.GroupBox groupBox1;
+            this.uart_I2C_control_button = new System.Windows.Forms.Button();
+            this.Band_rate_I2C_comboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Serial_port_I2C_comboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.UART_tabPage = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +58,11 @@
             this.Serial_port_comboBox = new System.Windows.Forms.ComboBox();
             this.uart_uart_control_button = new System.Windows.Forms.Button();
             this.I2C_tabPage = new System.Windows.Forms.TabPage();
+            this.fileContentTextBox = new System.Windows.Forms.TextBox();
+            this.EPPROM_program_file_path_textBox = new System.Windows.Forms.TextBox();
+            this.Open_EPPROM_program_button = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.find_i2c_device_button = new System.Windows.Forms.Button();
             this.reg_value_textBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -69,24 +79,88 @@
             this.Clear_I2C_rec_button = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.I2C_recive_textBox = new System.Windows.Forms.TextBox();
-            this.uart_I2C_control_button = new System.Windows.Forms.Button();
-            this.Band_rate_I2C_comboBox = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Serial_port_I2C_comboBox = new System.Windows.Forms.ComboBox();
             this.Uart_serialPort = new System.IO.Ports.SerialPort(this.components);
             this.I2C_serialPort = new System.IO.Ports.SerialPort(this.components);
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.Save_EPPROM_program_button = new System.Windows.Forms.Button();
             groupBox1 = new System.Windows.Forms.GroupBox();
+            groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.UART_tabPage.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.I2C_tabPage.SuspendLayout();
             this.panel3.SuspendLayout();
-            groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(this.uart_I2C_control_button);
+            groupBox1.Controls.Add(this.Band_rate_I2C_comboBox);
+            groupBox1.Controls.Add(this.label7);
+            groupBox1.Controls.Add(this.label8);
+            groupBox1.Controls.Add(this.Serial_port_I2C_comboBox);
+            groupBox1.Location = new System.Drawing.Point(9, 15);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(260, 167);
+            groupBox1.TabIndex = 26;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "uart port";
+            // 
+            // uart_I2C_control_button
+            // 
+            this.uart_I2C_control_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uart_I2C_control_button.Location = new System.Drawing.Point(83, 113);
+            this.uart_I2C_control_button.Name = "uart_I2C_control_button";
+            this.uart_I2C_control_button.Size = new System.Drawing.Size(125, 48);
+            this.uart_I2C_control_button.TabIndex = 9;
+            this.uart_I2C_control_button.Text = "打开串口";
+            this.uart_I2C_control_button.UseVisualStyleBackColor = true;
+            this.uart_I2C_control_button.Click += new System.EventHandler(this.uart_I2C_control_button_Click);
+            // 
+            // Band_rate_I2C_comboBox
+            // 
+            this.Band_rate_I2C_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Band_rate_I2C_comboBox.FormattingEnabled = true;
+            this.Band_rate_I2C_comboBox.Items.AddRange(new object[] {
+            "9600",
+            "14400",
+            "19200",
+            "38400",
+            "57600",
+            "115200"});
+            this.Band_rate_I2C_comboBox.Location = new System.Drawing.Point(87, 65);
+            this.Band_rate_I2C_comboBox.Name = "Band_rate_I2C_comboBox";
+            this.Band_rate_I2C_comboBox.Size = new System.Drawing.Size(121, 23);
+            this.Band_rate_I2C_comboBox.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(4, 61);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "波特率";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(4, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 20);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "串口号";
+            // 
+            // Serial_port_I2C_comboBox
+            // 
+            this.Serial_port_I2C_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Serial_port_I2C_comboBox.FormattingEnabled = true;
+            this.Serial_port_I2C_comboBox.Location = new System.Drawing.Point(87, 19);
+            this.Serial_port_I2C_comboBox.Name = "Serial_port_I2C_comboBox";
+            this.Serial_port_I2C_comboBox.Size = new System.Drawing.Size(121, 23);
+            this.Serial_port_I2C_comboBox.TabIndex = 5;
             // 
             // tabControl1
             // 
@@ -131,7 +205,7 @@
             this.label6.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(397, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 24);
+            this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 19;
             this.label6.Text = "接收区：";
             // 
@@ -141,7 +215,7 @@
             this.label5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(8, 314);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 24);
+            this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 18;
             this.label5.Text = "发送区：";
             // 
@@ -212,7 +286,7 @@
             this.uart_rec_str_radioButton.AutoSize = true;
             this.uart_rec_str_radioButton.Location = new System.Drawing.Point(76, 10);
             this.uart_rec_str_radioButton.Name = "uart_rec_str_radioButton";
-            this.uart_rec_str_radioButton.Size = new System.Drawing.Size(58, 19);
+            this.uart_rec_str_radioButton.Size = new System.Drawing.Size(55, 19);
             this.uart_rec_str_radioButton.TabIndex = 10;
             this.uart_rec_str_radioButton.TabStop = true;
             this.uart_rec_str_radioButton.Text = "字符";
@@ -223,7 +297,7 @@
             this.uart_rec_hex_radioButton.AutoSize = true;
             this.uart_rec_hex_radioButton.Location = new System.Drawing.Point(5, 10);
             this.uart_rec_hex_radioButton.Name = "uart_rec_hex_radioButton";
-            this.uart_rec_hex_radioButton.Size = new System.Drawing.Size(52, 19);
+            this.uart_rec_hex_radioButton.Size = new System.Drawing.Size(49, 19);
             this.uart_rec_hex_radioButton.TabIndex = 9;
             this.uart_rec_hex_radioButton.TabStop = true;
             this.uart_rec_hex_radioButton.Text = "HEX";
@@ -243,7 +317,7 @@
             this.uart_send_str_radioButton.AutoSize = true;
             this.uart_send_str_radioButton.Location = new System.Drawing.Point(78, 14);
             this.uart_send_str_radioButton.Name = "uart_send_str_radioButton";
-            this.uart_send_str_radioButton.Size = new System.Drawing.Size(58, 19);
+            this.uart_send_str_radioButton.Size = new System.Drawing.Size(55, 19);
             this.uart_send_str_radioButton.TabIndex = 8;
             this.uart_send_str_radioButton.TabStop = true;
             this.uart_send_str_radioButton.Text = "字符";
@@ -254,7 +328,7 @@
             this.uart_send_hex_radioButton.AutoSize = true;
             this.uart_send_hex_radioButton.Location = new System.Drawing.Point(7, 14);
             this.uart_send_hex_radioButton.Name = "uart_send_hex_radioButton";
-            this.uart_send_hex_radioButton.Size = new System.Drawing.Size(52, 19);
+            this.uart_send_hex_radioButton.Size = new System.Drawing.Size(49, 19);
             this.uart_send_hex_radioButton.TabIndex = 7;
             this.uart_send_hex_radioButton.TabStop = true;
             this.uart_send_hex_radioButton.Text = "HEX";
@@ -266,7 +340,7 @@
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(8, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 24);
+            this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "接收模式";
             // 
@@ -276,7 +350,7 @@
             this.label3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(8, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 24);
+            this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "发送模式";
             // 
@@ -302,7 +376,7 @@
             this.label2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(8, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 24);
+            this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "波特率";
             // 
@@ -312,7 +386,7 @@
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(8, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 24);
+            this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "串口号";
             // 
@@ -338,6 +412,10 @@
             // 
             // I2C_tabPage
             // 
+            this.I2C_tabPage.Controls.Add(this.Save_EPPROM_program_button);
+            this.I2C_tabPage.Controls.Add(this.fileContentTextBox);
+            this.I2C_tabPage.Controls.Add(this.EPPROM_program_file_path_textBox);
+            this.I2C_tabPage.Controls.Add(this.Open_EPPROM_program_button);
             this.I2C_tabPage.Controls.Add(groupBox1);
             this.I2C_tabPage.Controls.Add(this.label15);
             this.I2C_tabPage.Controls.Add(this.label14);
@@ -363,10 +441,58 @@
             this.I2C_tabPage.Text = "I2C";
             this.I2C_tabPage.UseVisualStyleBackColor = true;
             // 
+            // fileContentTextBox
+            // 
+            this.fileContentTextBox.Location = new System.Drawing.Point(524, 243);
+            this.fileContentTextBox.Multiline = true;
+            this.fileContentTextBox.Name = "fileContentTextBox";
+            this.fileContentTextBox.ReadOnly = true;
+            this.fileContentTextBox.Size = new System.Drawing.Size(471, 237);
+            this.fileContentTextBox.TabIndex = 29;
+            // 
+            // EPPROM_program_file_path_textBox
+            // 
+            this.EPPROM_program_file_path_textBox.Location = new System.Drawing.Point(357, 364);
+            this.EPPROM_program_file_path_textBox.Multiline = true;
+            this.EPPROM_program_file_path_textBox.Name = "EPPROM_program_file_path_textBox";
+            this.EPPROM_program_file_path_textBox.Size = new System.Drawing.Size(145, 78);
+            this.EPPROM_program_file_path_textBox.TabIndex = 28;
+            // 
+            // Open_EPPROM_program_button
+            // 
+            this.Open_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Open_EPPROM_program_button.Location = new System.Drawing.Point(357, 451);
+            this.Open_EPPROM_program_button.Name = "Open_EPPROM_program_button";
+            this.Open_EPPROM_program_button.Size = new System.Drawing.Size(145, 44);
+            this.Open_EPPROM_program_button.TabIndex = 27;
+            this.Open_EPPROM_program_button.Text = "加载EPPROM程序";
+            this.Open_EPPROM_program_button.UseVisualStyleBackColor = true;
+            this.Open_EPPROM_program_button.Click += new System.EventHandler(this.Open_EPPROM_program_button_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(156, 194);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 20);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "SCL引角:  B8";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(11, 194);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 20);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "SDA引角:  B9";
+            // 
             // find_i2c_device_button
             // 
             this.find_i2c_device_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.find_i2c_device_button.Location = new System.Drawing.Point(399, 486);
+            this.find_i2c_device_button.Location = new System.Drawing.Point(57, 522);
             this.find_i2c_device_button.Name = "find_i2c_device_button";
             this.find_i2c_device_button.Size = new System.Drawing.Size(172, 48);
             this.find_i2c_device_button.TabIndex = 23;
@@ -388,14 +514,14 @@
             this.label13.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label13.Location = new System.Drawing.Point(13, 414);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 24);
+            this.label13.Size = new System.Drawing.Size(69, 20);
             this.label13.TabIndex = 21;
             this.label13.Text = "寄存器值";
             // 
             // write_i2c_button
             // 
             this.write_i2c_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.write_i2c_button.Location = new System.Drawing.Point(205, 486);
+            this.write_i2c_button.Location = new System.Drawing.Point(160, 462);
             this.write_i2c_button.Name = "write_i2c_button";
             this.write_i2c_button.Size = new System.Drawing.Size(125, 48);
             this.write_i2c_button.TabIndex = 20;
@@ -406,7 +532,7 @@
             // read_i2c_button
             // 
             this.read_i2c_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.read_i2c_button.Location = new System.Drawing.Point(30, 486);
+            this.read_i2c_button.Location = new System.Drawing.Point(10, 462);
             this.read_i2c_button.Name = "read_i2c_button";
             this.read_i2c_button.Size = new System.Drawing.Size(125, 48);
             this.read_i2c_button.TabIndex = 19;
@@ -428,7 +554,7 @@
             this.label12.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label12.Location = new System.Drawing.Point(13, 361);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 24);
+            this.label12.Size = new System.Drawing.Size(84, 20);
             this.label12.TabIndex = 17;
             this.label12.Text = "寄存器地址";
             // 
@@ -446,7 +572,7 @@
             this.label11.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(11, 313);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(126, 24);
+            this.label11.Size = new System.Drawing.Size(106, 20);
             this.label11.TabIndex = 15;
             this.label11.Text = "设备地址    0x:";
             // 
@@ -464,7 +590,7 @@
             this.I2C_16bit_radioButton.AutoSize = true;
             this.I2C_16bit_radioButton.Location = new System.Drawing.Point(78, 14);
             this.I2C_16bit_radioButton.Name = "I2C_16bit_radioButton";
-            this.I2C_16bit_radioButton.Size = new System.Drawing.Size(68, 19);
+            this.I2C_16bit_radioButton.Size = new System.Drawing.Size(65, 19);
             this.I2C_16bit_radioButton.TabIndex = 8;
             this.I2C_16bit_radioButton.TabStop = true;
             this.I2C_16bit_radioButton.Text = "16bit";
@@ -475,7 +601,7 @@
             this.I2C_8bit_radioButton.AutoSize = true;
             this.I2C_8bit_radioButton.Location = new System.Drawing.Point(7, 14);
             this.I2C_8bit_radioButton.Name = "I2C_8bit_radioButton";
-            this.I2C_8bit_radioButton.Size = new System.Drawing.Size(60, 19);
+            this.I2C_8bit_radioButton.Size = new System.Drawing.Size(57, 19);
             this.I2C_8bit_radioButton.TabIndex = 7;
             this.I2C_8bit_radioButton.TabStop = true;
             this.I2C_8bit_radioButton.Text = "8bit";
@@ -487,7 +613,7 @@
             this.label10.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label10.Location = new System.Drawing.Point(11, 252);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 24);
+            this.label10.Size = new System.Drawing.Size(92, 20);
             this.label10.TabIndex = 13;
             this.label10.Text = "I2C模式选择";
             // 
@@ -508,7 +634,7 @@
             this.label9.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(433, 3);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 24);
+            this.label9.Size = new System.Drawing.Size(69, 20);
             this.label9.TabIndex = 11;
             this.label9.Text = "接收区：";
             // 
@@ -522,95 +648,15 @@
             this.I2C_recive_textBox.Size = new System.Drawing.Size(471, 173);
             this.I2C_recive_textBox.TabIndex = 10;
             // 
-            // uart_I2C_control_button
+            // Save_EPPROM_program_button
             // 
-            this.uart_I2C_control_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uart_I2C_control_button.Location = new System.Drawing.Point(83, 113);
-            this.uart_I2C_control_button.Name = "uart_I2C_control_button";
-            this.uart_I2C_control_button.Size = new System.Drawing.Size(125, 48);
-            this.uart_I2C_control_button.TabIndex = 9;
-            this.uart_I2C_control_button.Text = "打开串口";
-            this.uart_I2C_control_button.UseVisualStyleBackColor = true;
-            this.uart_I2C_control_button.Click += new System.EventHandler(this.uart_I2C_control_button_Click);
-            // 
-            // Band_rate_I2C_comboBox
-            // 
-            this.Band_rate_I2C_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Band_rate_I2C_comboBox.FormattingEnabled = true;
-            this.Band_rate_I2C_comboBox.Items.AddRange(new object[] {
-            "9600",
-            "14400",
-            "19200",
-            "38400",
-            "57600",
-            "115200"});
-            this.Band_rate_I2C_comboBox.Location = new System.Drawing.Point(87, 65);
-            this.Band_rate_I2C_comboBox.Name = "Band_rate_I2C_comboBox";
-            this.Band_rate_I2C_comboBox.Size = new System.Drawing.Size(121, 23);
-            this.Band_rate_I2C_comboBox.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(4, 61);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 24);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "波特率";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(4, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 24);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "串口号";
-            // 
-            // Serial_port_I2C_comboBox
-            // 
-            this.Serial_port_I2C_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Serial_port_I2C_comboBox.FormattingEnabled = true;
-            this.Serial_port_I2C_comboBox.Location = new System.Drawing.Point(87, 19);
-            this.Serial_port_I2C_comboBox.Name = "Serial_port_I2C_comboBox";
-            this.Serial_port_I2C_comboBox.Size = new System.Drawing.Size(121, 23);
-            this.Serial_port_I2C_comboBox.TabIndex = 5;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(11, 194);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(119, 24);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "SDA引角:  B9";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(156, 194);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(113, 24);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "SCL引角:  B8";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(this.uart_I2C_control_button);
-            groupBox1.Controls.Add(this.Band_rate_I2C_comboBox);
-            groupBox1.Controls.Add(this.label7);
-            groupBox1.Controls.Add(this.label8);
-            groupBox1.Controls.Add(this.Serial_port_I2C_comboBox);
-            groupBox1.Location = new System.Drawing.Point(9, 15);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(260, 167);
-            groupBox1.TabIndex = 26;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "uart port";
+            this.Save_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Save_EPPROM_program_button.Location = new System.Drawing.Point(357, 509);
+            this.Save_EPPROM_program_button.Name = "Save_EPPROM_program_button";
+            this.Save_EPPROM_program_button.Size = new System.Drawing.Size(145, 44);
+            this.Save_EPPROM_program_button.TabIndex = 30;
+            this.Save_EPPROM_program_button.Text = "保存EPPROM程序";
+            this.Save_EPPROM_program_button.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -621,6 +667,8 @@
             this.Name = "Form1";
             this.Text = "STM32控制助手";
             this.Load += new System.EventHandler(this.Form1_Load);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.UART_tabPage.ResumeLayout(false);
             this.UART_tabPage.PerformLayout();
@@ -632,8 +680,6 @@
             this.I2C_tabPage.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -688,6 +734,10 @@
         private System.Windows.Forms.Button find_i2c_device_button;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button Open_EPPROM_program_button;
+        private System.Windows.Forms.TextBox EPPROM_program_file_path_textBox;
+        private System.Windows.Forms.TextBox fileContentTextBox;
+        private System.Windows.Forms.Button Save_EPPROM_program_button;
     }
 }
 

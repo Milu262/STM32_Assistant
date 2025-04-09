@@ -1,11 +1,13 @@
 ﻿using System;
 using System.IO.Ports;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace STM32_Assistant
 {
     public partial class Form1 : Form
     {
+        string uart_rec_buffer = "";
         public void Serial_I2C_init()
         {
             for (int i = 1; i < 21; i++)//遍历所有可能的串口  COM1~COM20
@@ -38,6 +40,21 @@ namespace STM32_Assistant
             {
                 I2C_recive_textBox.AppendText(uart_rec_str); // 显示接收数据
             }));
+            //string pattern_I2C = @"Return Value = 0x([0-9A-Fa-f]{2})";
+            //Match match_I2C = Regex.Match(uart_rec_str, pattern_I2C);
+            //if (match_I2C.Success)
+            //{
+            //    string I2C_value = match_I2C.Groups[1].Value;
+            //    if (reg_value_textBox.InvokeRequired)
+            //    {
+            //        reg_value_textBox.Invoke(new Action(() => reg_value_textBox.Text = I2C_value));
+            //    }
+            //    else
+            //    {
+            //        reg_value_textBox.Text = I2C_value;
+            //    }
+            //}
+            uart_rec_buffer = uart_rec_str;//更新接收缓冲区
 
         }
         //格式化设备地址文本框

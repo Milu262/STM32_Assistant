@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace STM32_Assistant
@@ -88,6 +89,8 @@ namespace STM32_Assistant
                     MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+
+
             }
             else//16位寄存器地址模式
             {
@@ -95,6 +98,10 @@ namespace STM32_Assistant
                 if(reg_adress_textBox.Text.Length == 1)//寄存器地址为1位时，前面补0
                 {
                     reg_adress_textBox.Text = "00 0" + reg_adress_textBox.Text;
+                }
+                else if (reg_adress_textBox.Text.Length == 2)//寄存器地址为2位时，前面补0
+                {
+                    reg_adress_textBox.Text = "00 " + reg_adress_textBox.Text;
                 }
                 if (reg_adress_textBox.Text.Length == 4)//寄存器地址为4位时，第4为前面加一个补0
                 {
@@ -111,6 +118,9 @@ namespace STM32_Assistant
                     MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+
+
         }
 
         //写I2C按钮函数
@@ -170,6 +180,10 @@ namespace STM32_Assistant
                 if (reg_adress_textBox.Text.Length == 1)//寄存器地址为1位时，前面补0
                 {
                     reg_adress_textBox.Text = "00 0" + reg_adress_textBox.Text;
+                }
+                else if (reg_adress_textBox.Text.Length == 2)//寄存器地址为2位时，前面补0
+                {
+                    reg_adress_textBox.Text = "00 " + reg_adress_textBox.Text;
                 }
                 if (reg_adress_textBox.Text.Length == 4)//寄存器地址为4位时，第4为前面加一个补0
                 {
