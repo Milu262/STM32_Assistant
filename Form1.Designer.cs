@@ -58,6 +58,7 @@
             this.Serial_port_comboBox = new System.Windows.Forms.ComboBox();
             this.uart_uart_control_button = new System.Windows.Forms.Button();
             this.I2C_tabPage = new System.Windows.Forms.TabPage();
+            this.Save_EPPROM_program_button = new System.Windows.Forms.Button();
             this.fileContentTextBox = new System.Windows.Forms.TextBox();
             this.EPPROM_program_file_path_textBox = new System.Windows.Forms.TextBox();
             this.Open_EPPROM_program_button = new System.Windows.Forms.Button();
@@ -81,7 +82,6 @@
             this.I2C_recive_textBox = new System.Windows.Forms.TextBox();
             this.Uart_serialPort = new System.IO.Ports.SerialPort(this.components);
             this.I2C_serialPort = new System.IO.Ports.SerialPort(this.components);
-            this.Save_EPPROM_program_button = new System.Windows.Forms.Button();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -99,9 +99,11 @@
             groupBox1.Controls.Add(this.label7);
             groupBox1.Controls.Add(this.label8);
             groupBox1.Controls.Add(this.Serial_port_I2C_comboBox);
-            groupBox1.Location = new System.Drawing.Point(9, 15);
+            groupBox1.Location = new System.Drawing.Point(7, 12);
+            groupBox1.Margin = new System.Windows.Forms.Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(260, 167);
+            groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            groupBox1.Size = new System.Drawing.Size(195, 134);
             groupBox1.TabIndex = 26;
             groupBox1.TabStop = false;
             groupBox1.Text = "uart port";
@@ -109,9 +111,10 @@
             // uart_I2C_control_button
             // 
             this.uart_I2C_control_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uart_I2C_control_button.Location = new System.Drawing.Point(83, 113);
+            this.uart_I2C_control_button.Location = new System.Drawing.Point(62, 90);
+            this.uart_I2C_control_button.Margin = new System.Windows.Forms.Padding(2);
             this.uart_I2C_control_button.Name = "uart_I2C_control_button";
-            this.uart_I2C_control_button.Size = new System.Drawing.Size(125, 48);
+            this.uart_I2C_control_button.Size = new System.Drawing.Size(94, 38);
             this.uart_I2C_control_button.TabIndex = 9;
             this.uart_I2C_control_button.Text = "打开串口";
             this.uart_I2C_control_button.UseVisualStyleBackColor = true;
@@ -128,16 +131,18 @@
             "38400",
             "57600",
             "115200"});
-            this.Band_rate_I2C_comboBox.Location = new System.Drawing.Point(87, 65);
+            this.Band_rate_I2C_comboBox.Location = new System.Drawing.Point(65, 52);
+            this.Band_rate_I2C_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.Band_rate_I2C_comboBox.Name = "Band_rate_I2C_comboBox";
-            this.Band_rate_I2C_comboBox.Size = new System.Drawing.Size(121, 23);
+            this.Band_rate_I2C_comboBox.Size = new System.Drawing.Size(92, 20);
             this.Band_rate_I2C_comboBox.TabIndex = 8;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(4, 61);
+            this.label7.Location = new System.Drawing.Point(3, 49);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 20);
             this.label7.TabIndex = 7;
@@ -147,7 +152,8 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(4, 18);
+            this.label8.Location = new System.Drawing.Point(3, 14);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 20);
             this.label8.TabIndex = 6;
@@ -157,9 +163,10 @@
             // 
             this.Serial_port_I2C_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Serial_port_I2C_comboBox.FormattingEnabled = true;
-            this.Serial_port_I2C_comboBox.Location = new System.Drawing.Point(87, 19);
+            this.Serial_port_I2C_comboBox.Location = new System.Drawing.Point(65, 15);
+            this.Serial_port_I2C_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.Serial_port_I2C_comboBox.Name = "Serial_port_I2C_comboBox";
-            this.Serial_port_I2C_comboBox.Size = new System.Drawing.Size(121, 23);
+            this.Serial_port_I2C_comboBox.Size = new System.Drawing.Size(92, 20);
             this.Serial_port_I2C_comboBox.TabIndex = 5;
             // 
             // tabControl1
@@ -168,9 +175,10 @@
             this.tabControl1.Controls.Add(this.I2C_tabPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1011, 605);
+            this.tabControl1.Size = new System.Drawing.Size(965, 595);
             this.tabControl1.TabIndex = 0;
             // 
             // UART_tabPage
@@ -191,10 +199,11 @@
             this.UART_tabPage.Controls.Add(this.label1);
             this.UART_tabPage.Controls.Add(this.Serial_port_comboBox);
             this.UART_tabPage.Controls.Add(this.uart_uart_control_button);
-            this.UART_tabPage.Location = new System.Drawing.Point(4, 25);
+            this.UART_tabPage.Location = new System.Drawing.Point(4, 22);
+            this.UART_tabPage.Margin = new System.Windows.Forms.Padding(2);
             this.UART_tabPage.Name = "UART_tabPage";
-            this.UART_tabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.UART_tabPage.Size = new System.Drawing.Size(1003, 576);
+            this.UART_tabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.UART_tabPage.Size = new System.Drawing.Size(957, 569);
             this.UART_tabPage.TabIndex = 0;
             this.UART_tabPage.Text = "UART";
             this.UART_tabPage.UseVisualStyleBackColor = true;
@@ -203,7 +212,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(397, 7);
+            this.label6.Location = new System.Drawing.Point(506, 3);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 19;
@@ -213,7 +223,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(8, 314);
+            this.label5.Location = new System.Drawing.Point(8, 400);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 18;
@@ -222,9 +233,10 @@
             // Clear_rec_textbox_button
             // 
             this.Clear_rec_textbox_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Clear_rec_textbox_button.Location = new System.Drawing.Point(860, 382);
+            this.Clear_rec_textbox_button.Location = new System.Drawing.Point(856, 300);
+            this.Clear_rec_textbox_button.Margin = new System.Windows.Forms.Padding(2);
             this.Clear_rec_textbox_button.Name = "Clear_rec_textbox_button";
-            this.Clear_rec_textbox_button.Size = new System.Drawing.Size(125, 48);
+            this.Clear_rec_textbox_button.Size = new System.Drawing.Size(94, 38);
             this.Clear_rec_textbox_button.TabIndex = 17;
             this.Clear_rec_textbox_button.Text = "清除";
             this.Clear_rec_textbox_button.UseVisualStyleBackColor = true;
@@ -233,20 +245,22 @@
             // recive_textBox
             // 
             this.recive_textBox.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.recive_textBox.Location = new System.Drawing.Point(485, 4);
+            this.recive_textBox.Location = new System.Drawing.Point(579, 0);
+            this.recive_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.recive_textBox.Multiline = true;
             this.recive_textBox.Name = "recive_textBox";
             this.recive_textBox.ReadOnly = true;
-            this.recive_textBox.Size = new System.Drawing.Size(500, 369);
+            this.recive_textBox.Size = new System.Drawing.Size(376, 296);
             this.recive_textBox.TabIndex = 16;
             this.recive_textBox.TextChanged += new System.EventHandler(this.recive_textBox_TextChanged);
             // 
             // Uart_send_button
             // 
             this.Uart_send_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Uart_send_button.Location = new System.Drawing.Point(167, 455);
+            this.Uart_send_button.Location = new System.Drawing.Point(127, 513);
+            this.Uart_send_button.Margin = new System.Windows.Forms.Padding(2);
             this.Uart_send_button.Name = "Uart_send_button";
-            this.Uart_send_button.Size = new System.Drawing.Size(125, 48);
+            this.Uart_send_button.Size = new System.Drawing.Size(94, 38);
             this.Uart_send_button.TabIndex = 15;
             this.Uart_send_button.Text = "发送";
             this.Uart_send_button.UseVisualStyleBackColor = true;
@@ -255,9 +269,10 @@
             // Clear_send_textbox_button
             // 
             this.Clear_send_textbox_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Clear_send_textbox_button.Location = new System.Drawing.Point(12, 455);
+            this.Clear_send_textbox_button.Location = new System.Drawing.Point(11, 513);
+            this.Clear_send_textbox_button.Margin = new System.Windows.Forms.Padding(2);
             this.Clear_send_textbox_button.Name = "Clear_send_textbox_button";
-            this.Clear_send_textbox_button.Size = new System.Drawing.Size(125, 48);
+            this.Clear_send_textbox_button.Size = new System.Drawing.Size(94, 38);
             this.Clear_send_textbox_button.TabIndex = 14;
             this.Clear_send_textbox_button.Text = "清除";
             this.Clear_send_textbox_button.UseVisualStyleBackColor = true;
@@ -266,27 +281,30 @@
             // Uart_send_textBox
             // 
             this.Uart_send_textBox.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Uart_send_textBox.Location = new System.Drawing.Point(11, 341);
+            this.Uart_send_textBox.Location = new System.Drawing.Point(10, 422);
+            this.Uart_send_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Uart_send_textBox.Multiline = true;
             this.Uart_send_textBox.Name = "Uart_send_textBox";
-            this.Uart_send_textBox.Size = new System.Drawing.Size(281, 89);
+            this.Uart_send_textBox.Size = new System.Drawing.Size(212, 72);
             this.Uart_send_textBox.TabIndex = 13;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.uart_rec_str_radioButton);
             this.panel2.Controls.Add(this.uart_rec_hex_radioButton);
-            this.panel2.Location = new System.Drawing.Point(91, 166);
+            this.panel2.Location = new System.Drawing.Point(68, 133);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(148, 44);
+            this.panel2.Size = new System.Drawing.Size(111, 35);
             this.panel2.TabIndex = 12;
             // 
             // uart_rec_str_radioButton
             // 
             this.uart_rec_str_radioButton.AutoSize = true;
-            this.uart_rec_str_radioButton.Location = new System.Drawing.Point(76, 10);
+            this.uart_rec_str_radioButton.Location = new System.Drawing.Point(57, 8);
+            this.uart_rec_str_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.uart_rec_str_radioButton.Name = "uart_rec_str_radioButton";
-            this.uart_rec_str_radioButton.Size = new System.Drawing.Size(55, 19);
+            this.uart_rec_str_radioButton.Size = new System.Drawing.Size(47, 16);
             this.uart_rec_str_radioButton.TabIndex = 10;
             this.uart_rec_str_radioButton.TabStop = true;
             this.uart_rec_str_radioButton.Text = "字符";
@@ -295,9 +313,10 @@
             // uart_rec_hex_radioButton
             // 
             this.uart_rec_hex_radioButton.AutoSize = true;
-            this.uart_rec_hex_radioButton.Location = new System.Drawing.Point(5, 10);
+            this.uart_rec_hex_radioButton.Location = new System.Drawing.Point(4, 8);
+            this.uart_rec_hex_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.uart_rec_hex_radioButton.Name = "uart_rec_hex_radioButton";
-            this.uart_rec_hex_radioButton.Size = new System.Drawing.Size(49, 19);
+            this.uart_rec_hex_radioButton.Size = new System.Drawing.Size(41, 16);
             this.uart_rec_hex_radioButton.TabIndex = 9;
             this.uart_rec_hex_radioButton.TabStop = true;
             this.uart_rec_hex_radioButton.Text = "HEX";
@@ -307,17 +326,19 @@
             // 
             this.panel1.Controls.Add(this.uart_send_str_radioButton);
             this.panel1.Controls.Add(this.uart_send_hex_radioButton);
-            this.panel1.Location = new System.Drawing.Point(89, 105);
+            this.panel1.Location = new System.Drawing.Point(67, 84);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(151, 44);
+            this.panel1.Size = new System.Drawing.Size(113, 35);
             this.panel1.TabIndex = 11;
             // 
             // uart_send_str_radioButton
             // 
             this.uart_send_str_radioButton.AutoSize = true;
-            this.uart_send_str_radioButton.Location = new System.Drawing.Point(78, 14);
+            this.uart_send_str_radioButton.Location = new System.Drawing.Point(58, 11);
+            this.uart_send_str_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.uart_send_str_radioButton.Name = "uart_send_str_radioButton";
-            this.uart_send_str_radioButton.Size = new System.Drawing.Size(55, 19);
+            this.uart_send_str_radioButton.Size = new System.Drawing.Size(47, 16);
             this.uart_send_str_radioButton.TabIndex = 8;
             this.uart_send_str_radioButton.TabStop = true;
             this.uart_send_str_radioButton.Text = "字符";
@@ -326,9 +347,10 @@
             // uart_send_hex_radioButton
             // 
             this.uart_send_hex_radioButton.AutoSize = true;
-            this.uart_send_hex_radioButton.Location = new System.Drawing.Point(7, 14);
+            this.uart_send_hex_radioButton.Location = new System.Drawing.Point(5, 11);
+            this.uart_send_hex_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.uart_send_hex_radioButton.Name = "uart_send_hex_radioButton";
-            this.uart_send_hex_radioButton.Size = new System.Drawing.Size(49, 19);
+            this.uart_send_hex_radioButton.Size = new System.Drawing.Size(41, 16);
             this.uart_send_hex_radioButton.TabIndex = 7;
             this.uart_send_hex_radioButton.TabStop = true;
             this.uart_send_hex_radioButton.Text = "HEX";
@@ -338,7 +360,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(8, 171);
+            this.label4.Location = new System.Drawing.Point(6, 137);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 6;
@@ -348,7 +371,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(8, 114);
+            this.label3.Location = new System.Drawing.Point(6, 91);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 5;
@@ -365,16 +389,18 @@
             "38400",
             "57600",
             "115200"});
-            this.Band_rate_comboBox.Location = new System.Drawing.Point(91, 70);
+            this.Band_rate_comboBox.Location = new System.Drawing.Point(68, 56);
+            this.Band_rate_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.Band_rate_comboBox.Name = "Band_rate_comboBox";
-            this.Band_rate_comboBox.Size = new System.Drawing.Size(121, 23);
+            this.Band_rate_comboBox.Size = new System.Drawing.Size(92, 20);
             this.Band_rate_comboBox.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(8, 66);
+            this.label2.Location = new System.Drawing.Point(6, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.TabIndex = 3;
@@ -384,7 +410,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(8, 23);
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 2;
@@ -394,17 +421,19 @@
             // 
             this.Serial_port_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Serial_port_comboBox.FormattingEnabled = true;
-            this.Serial_port_comboBox.Location = new System.Drawing.Point(91, 24);
+            this.Serial_port_comboBox.Location = new System.Drawing.Point(68, 19);
+            this.Serial_port_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.Serial_port_comboBox.Name = "Serial_port_comboBox";
-            this.Serial_port_comboBox.Size = new System.Drawing.Size(121, 23);
+            this.Serial_port_comboBox.Size = new System.Drawing.Size(92, 20);
             this.Serial_port_comboBox.TabIndex = 1;
             // 
             // uart_uart_control_button
             // 
             this.uart_uart_control_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uart_uart_control_button.Location = new System.Drawing.Point(96, 216);
+            this.uart_uart_control_button.Location = new System.Drawing.Point(72, 173);
+            this.uart_uart_control_button.Margin = new System.Windows.Forms.Padding(2);
             this.uart_uart_control_button.Name = "uart_uart_control_button";
-            this.uart_uart_control_button.Size = new System.Drawing.Size(125, 48);
+            this.uart_uart_control_button.Size = new System.Drawing.Size(94, 38);
             this.uart_uart_control_button.TabIndex = 0;
             this.uart_uart_control_button.Text = "打开串口";
             this.uart_uart_control_button.UseVisualStyleBackColor = true;
@@ -433,37 +462,53 @@
             this.I2C_tabPage.Controls.Add(this.Clear_I2C_rec_button);
             this.I2C_tabPage.Controls.Add(this.label9);
             this.I2C_tabPage.Controls.Add(this.I2C_recive_textBox);
-            this.I2C_tabPage.Location = new System.Drawing.Point(4, 25);
+            this.I2C_tabPage.Location = new System.Drawing.Point(4, 22);
+            this.I2C_tabPage.Margin = new System.Windows.Forms.Padding(2);
             this.I2C_tabPage.Name = "I2C_tabPage";
-            this.I2C_tabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.I2C_tabPage.Size = new System.Drawing.Size(1003, 576);
+            this.I2C_tabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.I2C_tabPage.Size = new System.Drawing.Size(957, 569);
             this.I2C_tabPage.TabIndex = 1;
             this.I2C_tabPage.Text = "I2C";
             this.I2C_tabPage.UseVisualStyleBackColor = true;
             // 
+            // Save_EPPROM_program_button
+            // 
+            this.Save_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Save_EPPROM_program_button.Location = new System.Drawing.Point(420, 437);
+            this.Save_EPPROM_program_button.Margin = new System.Windows.Forms.Padding(2);
+            this.Save_EPPROM_program_button.Name = "Save_EPPROM_program_button";
+            this.Save_EPPROM_program_button.Size = new System.Drawing.Size(109, 35);
+            this.Save_EPPROM_program_button.TabIndex = 30;
+            this.Save_EPPROM_program_button.Text = "保存EPPROM程序";
+            this.Save_EPPROM_program_button.UseVisualStyleBackColor = true;
+            // 
             // fileContentTextBox
             // 
-            this.fileContentTextBox.Location = new System.Drawing.Point(524, 243);
+            this.fileContentTextBox.Location = new System.Drawing.Point(601, 230);
+            this.fileContentTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.fileContentTextBox.Multiline = true;
             this.fileContentTextBox.Name = "fileContentTextBox";
             this.fileContentTextBox.ReadOnly = true;
-            this.fileContentTextBox.Size = new System.Drawing.Size(471, 237);
+            this.fileContentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.fileContentTextBox.Size = new System.Drawing.Size(354, 330);
             this.fileContentTextBox.TabIndex = 29;
             // 
             // EPPROM_program_file_path_textBox
             // 
-            this.EPPROM_program_file_path_textBox.Location = new System.Drawing.Point(357, 364);
+            this.EPPROM_program_file_path_textBox.Location = new System.Drawing.Point(304, 370);
+            this.EPPROM_program_file_path_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.EPPROM_program_file_path_textBox.Multiline = true;
             this.EPPROM_program_file_path_textBox.Name = "EPPROM_program_file_path_textBox";
-            this.EPPROM_program_file_path_textBox.Size = new System.Drawing.Size(145, 78);
+            this.EPPROM_program_file_path_textBox.Size = new System.Drawing.Size(225, 63);
             this.EPPROM_program_file_path_textBox.TabIndex = 28;
             // 
             // Open_EPPROM_program_button
             // 
             this.Open_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Open_EPPROM_program_button.Location = new System.Drawing.Point(357, 451);
+            this.Open_EPPROM_program_button.Location = new System.Drawing.Point(304, 437);
+            this.Open_EPPROM_program_button.Margin = new System.Windows.Forms.Padding(2);
             this.Open_EPPROM_program_button.Name = "Open_EPPROM_program_button";
-            this.Open_EPPROM_program_button.Size = new System.Drawing.Size(145, 44);
+            this.Open_EPPROM_program_button.Size = new System.Drawing.Size(109, 35);
             this.Open_EPPROM_program_button.TabIndex = 27;
             this.Open_EPPROM_program_button.Text = "加载EPPROM程序";
             this.Open_EPPROM_program_button.UseVisualStyleBackColor = true;
@@ -473,7 +518,8 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(156, 194);
+            this.label15.Location = new System.Drawing.Point(117, 155);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(96, 20);
             this.label15.TabIndex = 25;
@@ -483,7 +529,8 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(11, 194);
+            this.label14.Location = new System.Drawing.Point(8, 155);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 20);
             this.label14.TabIndex = 24;
@@ -492,9 +539,10 @@
             // find_i2c_device_button
             // 
             this.find_i2c_device_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.find_i2c_device_button.Location = new System.Drawing.Point(57, 522);
+            this.find_i2c_device_button.Location = new System.Drawing.Point(43, 418);
+            this.find_i2c_device_button.Margin = new System.Windows.Forms.Padding(2);
             this.find_i2c_device_button.Name = "find_i2c_device_button";
-            this.find_i2c_device_button.Size = new System.Drawing.Size(172, 48);
+            this.find_i2c_device_button.Size = new System.Drawing.Size(129, 38);
             this.find_i2c_device_button.TabIndex = 23;
             this.find_i2c_device_button.Text = "Find i2c device";
             this.find_i2c_device_button.UseVisualStyleBackColor = true;
@@ -502,9 +550,10 @@
             // 
             // reg_value_textBox
             // 
-            this.reg_value_textBox.Location = new System.Drawing.Point(160, 417);
+            this.reg_value_textBox.Location = new System.Drawing.Point(120, 334);
+            this.reg_value_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.reg_value_textBox.Name = "reg_value_textBox";
-            this.reg_value_textBox.Size = new System.Drawing.Size(69, 25);
+            this.reg_value_textBox.Size = new System.Drawing.Size(53, 21);
             this.reg_value_textBox.TabIndex = 22;
             this.reg_value_textBox.TextChanged += new System.EventHandler(this.reg_value_textBox_TextChanged);
             // 
@@ -512,7 +561,8 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(13, 414);
+            this.label13.Location = new System.Drawing.Point(10, 331);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 20);
             this.label13.TabIndex = 21;
@@ -521,9 +571,10 @@
             // write_i2c_button
             // 
             this.write_i2c_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.write_i2c_button.Location = new System.Drawing.Point(160, 462);
+            this.write_i2c_button.Location = new System.Drawing.Point(120, 370);
+            this.write_i2c_button.Margin = new System.Windows.Forms.Padding(2);
             this.write_i2c_button.Name = "write_i2c_button";
-            this.write_i2c_button.Size = new System.Drawing.Size(125, 48);
+            this.write_i2c_button.Size = new System.Drawing.Size(94, 38);
             this.write_i2c_button.TabIndex = 20;
             this.write_i2c_button.Text = "写I2C";
             this.write_i2c_button.UseVisualStyleBackColor = true;
@@ -532,9 +583,10 @@
             // read_i2c_button
             // 
             this.read_i2c_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.read_i2c_button.Location = new System.Drawing.Point(10, 462);
+            this.read_i2c_button.Location = new System.Drawing.Point(8, 370);
+            this.read_i2c_button.Margin = new System.Windows.Forms.Padding(2);
             this.read_i2c_button.Name = "read_i2c_button";
-            this.read_i2c_button.Size = new System.Drawing.Size(125, 48);
+            this.read_i2c_button.Size = new System.Drawing.Size(94, 38);
             this.read_i2c_button.TabIndex = 19;
             this.read_i2c_button.Text = "读I2C";
             this.read_i2c_button.UseVisualStyleBackColor = true;
@@ -542,9 +594,10 @@
             // 
             // reg_adress_textBox
             // 
-            this.reg_adress_textBox.Location = new System.Drawing.Point(160, 364);
+            this.reg_adress_textBox.Location = new System.Drawing.Point(120, 291);
+            this.reg_adress_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.reg_adress_textBox.Name = "reg_adress_textBox";
-            this.reg_adress_textBox.Size = new System.Drawing.Size(69, 25);
+            this.reg_adress_textBox.Size = new System.Drawing.Size(53, 21);
             this.reg_adress_textBox.TabIndex = 18;
             this.reg_adress_textBox.TextChanged += new System.EventHandler(this.reg_adress_textBox_TextChanged);
             // 
@@ -552,7 +605,8 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(13, 361);
+            this.label12.Location = new System.Drawing.Point(10, 289);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 20);
             this.label12.TabIndex = 17;
@@ -560,9 +614,10 @@
             // 
             // device_adress_textBox
             // 
-            this.device_adress_textBox.Location = new System.Drawing.Point(160, 313);
+            this.device_adress_textBox.Location = new System.Drawing.Point(120, 250);
+            this.device_adress_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.device_adress_textBox.Name = "device_adress_textBox";
-            this.device_adress_textBox.Size = new System.Drawing.Size(69, 25);
+            this.device_adress_textBox.Size = new System.Drawing.Size(53, 21);
             this.device_adress_textBox.TabIndex = 16;
             this.device_adress_textBox.TextChanged += new System.EventHandler(this.device_adress_textBox_TextChanged);
             // 
@@ -570,7 +625,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(11, 313);
+            this.label11.Location = new System.Drawing.Point(8, 250);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(106, 20);
             this.label11.TabIndex = 15;
@@ -580,17 +636,19 @@
             // 
             this.panel3.Controls.Add(this.I2C_16bit_radioButton);
             this.panel3.Controls.Add(this.I2C_8bit_radioButton);
-            this.panel3.Location = new System.Drawing.Point(127, 243);
+            this.panel3.Location = new System.Drawing.Point(95, 194);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(151, 44);
+            this.panel3.Size = new System.Drawing.Size(113, 35);
             this.panel3.TabIndex = 14;
             // 
             // I2C_16bit_radioButton
             // 
             this.I2C_16bit_radioButton.AutoSize = true;
-            this.I2C_16bit_radioButton.Location = new System.Drawing.Point(78, 14);
+            this.I2C_16bit_radioButton.Location = new System.Drawing.Point(58, 11);
+            this.I2C_16bit_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.I2C_16bit_radioButton.Name = "I2C_16bit_radioButton";
-            this.I2C_16bit_radioButton.Size = new System.Drawing.Size(65, 19);
+            this.I2C_16bit_radioButton.Size = new System.Drawing.Size(53, 16);
             this.I2C_16bit_radioButton.TabIndex = 8;
             this.I2C_16bit_radioButton.TabStop = true;
             this.I2C_16bit_radioButton.Text = "16bit";
@@ -599,9 +657,10 @@
             // I2C_8bit_radioButton
             // 
             this.I2C_8bit_radioButton.AutoSize = true;
-            this.I2C_8bit_radioButton.Location = new System.Drawing.Point(7, 14);
+            this.I2C_8bit_radioButton.Location = new System.Drawing.Point(5, 11);
+            this.I2C_8bit_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.I2C_8bit_radioButton.Name = "I2C_8bit_radioButton";
-            this.I2C_8bit_radioButton.Size = new System.Drawing.Size(57, 19);
+            this.I2C_8bit_radioButton.Size = new System.Drawing.Size(47, 16);
             this.I2C_8bit_radioButton.TabIndex = 7;
             this.I2C_8bit_radioButton.TabStop = true;
             this.I2C_8bit_radioButton.Text = "8bit";
@@ -611,7 +670,8 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(11, 252);
+            this.label10.Location = new System.Drawing.Point(8, 202);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 20);
             this.label10.TabIndex = 13;
@@ -620,9 +680,10 @@
             // Clear_I2C_rec_button
             // 
             this.Clear_I2C_rec_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Clear_I2C_rec_button.Location = new System.Drawing.Point(872, 182);
+            this.Clear_I2C_rec_button.Location = new System.Drawing.Point(857, 151);
+            this.Clear_I2C_rec_button.Margin = new System.Windows.Forms.Padding(2);
             this.Clear_I2C_rec_button.Name = "Clear_I2C_rec_button";
-            this.Clear_I2C_rec_button.Size = new System.Drawing.Size(125, 48);
+            this.Clear_I2C_rec_button.Size = new System.Drawing.Size(94, 38);
             this.Clear_I2C_rec_button.TabIndex = 12;
             this.Clear_I2C_rec_button.Text = "清除";
             this.Clear_I2C_rec_button.UseVisualStyleBackColor = true;
@@ -632,7 +693,8 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(433, 3);
+            this.label9.Location = new System.Drawing.Point(528, 7);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 20);
             this.label9.TabIndex = 11;
@@ -640,30 +702,22 @@
             // 
             // I2C_recive_textBox
             // 
-            this.I2C_recive_textBox.Location = new System.Drawing.Point(524, 3);
+            this.I2C_recive_textBox.Location = new System.Drawing.Point(596, 7);
+            this.I2C_recive_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.I2C_recive_textBox.Multiline = true;
             this.I2C_recive_textBox.Name = "I2C_recive_textBox";
             this.I2C_recive_textBox.ReadOnly = true;
             this.I2C_recive_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.I2C_recive_textBox.Size = new System.Drawing.Size(471, 173);
+            this.I2C_recive_textBox.Size = new System.Drawing.Size(354, 139);
             this.I2C_recive_textBox.TabIndex = 10;
-            // 
-            // Save_EPPROM_program_button
-            // 
-            this.Save_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Save_EPPROM_program_button.Location = new System.Drawing.Point(357, 509);
-            this.Save_EPPROM_program_button.Name = "Save_EPPROM_program_button";
-            this.Save_EPPROM_program_button.Size = new System.Drawing.Size(145, 44);
-            this.Save_EPPROM_program_button.TabIndex = 30;
-            this.Save_EPPROM_program_button.Text = "保存EPPROM程序";
-            this.Save_EPPROM_program_button.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 605);
+            this.ClientSize = new System.Drawing.Size(965, 595);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "STM32控制助手";
             this.Load += new System.EventHandler(this.Form1_Load);
