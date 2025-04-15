@@ -178,7 +178,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(965, 595);
+            this.tabControl1.Size = new System.Drawing.Size(1268, 726);
             this.tabControl1.TabIndex = 0;
             // 
             // UART_tabPage
@@ -203,7 +203,7 @@
             this.UART_tabPage.Margin = new System.Windows.Forms.Padding(2);
             this.UART_tabPage.Name = "UART_tabPage";
             this.UART_tabPage.Padding = new System.Windows.Forms.Padding(2);
-            this.UART_tabPage.Size = new System.Drawing.Size(957, 569);
+            this.UART_tabPage.Size = new System.Drawing.Size(1260, 700);
             this.UART_tabPage.TabIndex = 0;
             this.UART_tabPage.Text = "UART";
             this.UART_tabPage.UseVisualStyleBackColor = true;
@@ -233,7 +233,7 @@
             // Clear_rec_textbox_button
             // 
             this.Clear_rec_textbox_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Clear_rec_textbox_button.Location = new System.Drawing.Point(856, 300);
+            this.Clear_rec_textbox_button.Location = new System.Drawing.Point(1159, 527);
             this.Clear_rec_textbox_button.Margin = new System.Windows.Forms.Padding(2);
             this.Clear_rec_textbox_button.Name = "Clear_rec_textbox_button";
             this.Clear_rec_textbox_button.Size = new System.Drawing.Size(94, 38);
@@ -250,7 +250,7 @@
             this.recive_textBox.Multiline = true;
             this.recive_textBox.Name = "recive_textBox";
             this.recive_textBox.ReadOnly = true;
-            this.recive_textBox.Size = new System.Drawing.Size(376, 296);
+            this.recive_textBox.Size = new System.Drawing.Size(674, 523);
             this.recive_textBox.TabIndex = 16;
             this.recive_textBox.TextChanged += new System.EventHandler(this.recive_textBox_TextChanged);
             // 
@@ -466,7 +466,7 @@
             this.I2C_tabPage.Margin = new System.Windows.Forms.Padding(2);
             this.I2C_tabPage.Name = "I2C_tabPage";
             this.I2C_tabPage.Padding = new System.Windows.Forms.Padding(2);
-            this.I2C_tabPage.Size = new System.Drawing.Size(957, 569);
+            this.I2C_tabPage.Size = new System.Drawing.Size(1260, 700);
             this.I2C_tabPage.TabIndex = 1;
             this.I2C_tabPage.Text = "I2C";
             this.I2C_tabPage.UseVisualStyleBackColor = true;
@@ -474,7 +474,7 @@
             // Save_EPPROM_program_button
             // 
             this.Save_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Save_EPPROM_program_button.Location = new System.Drawing.Point(420, 437);
+            this.Save_EPPROM_program_button.Location = new System.Drawing.Point(618, 526);
             this.Save_EPPROM_program_button.Margin = new System.Windows.Forms.Padding(2);
             this.Save_EPPROM_program_button.Name = "Save_EPPROM_program_button";
             this.Save_EPPROM_program_button.Size = new System.Drawing.Size(109, 35);
@@ -484,28 +484,30 @@
             // 
             // fileContentTextBox
             // 
-            this.fileContentTextBox.Location = new System.Drawing.Point(601, 230);
+            this.fileContentTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileContentTextBox.Location = new System.Drawing.Point(749, 308);
             this.fileContentTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.fileContentTextBox.Multiline = true;
             this.fileContentTextBox.Name = "fileContentTextBox";
             this.fileContentTextBox.ReadOnly = true;
             this.fileContentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.fileContentTextBox.Size = new System.Drawing.Size(354, 330);
+            this.fileContentTextBox.Size = new System.Drawing.Size(509, 385);
             this.fileContentTextBox.TabIndex = 29;
             // 
             // EPPROM_program_file_path_textBox
             // 
-            this.EPPROM_program_file_path_textBox.Location = new System.Drawing.Point(304, 370);
+            this.EPPROM_program_file_path_textBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.EPPROM_program_file_path_textBox.Location = new System.Drawing.Point(407, 459);
             this.EPPROM_program_file_path_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.EPPROM_program_file_path_textBox.Multiline = true;
             this.EPPROM_program_file_path_textBox.Name = "EPPROM_program_file_path_textBox";
-            this.EPPROM_program_file_path_textBox.Size = new System.Drawing.Size(225, 63);
+            this.EPPROM_program_file_path_textBox.Size = new System.Drawing.Size(320, 63);
             this.EPPROM_program_file_path_textBox.TabIndex = 28;
             // 
             // Open_EPPROM_program_button
             // 
             this.Open_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Open_EPPROM_program_button.Location = new System.Drawing.Point(304, 437);
+            this.Open_EPPROM_program_button.Location = new System.Drawing.Point(407, 526);
             this.Open_EPPROM_program_button.Margin = new System.Windows.Forms.Padding(2);
             this.Open_EPPROM_program_button.Name = "Open_EPPROM_program_button";
             this.Open_EPPROM_program_button.Size = new System.Drawing.Size(109, 35);
@@ -680,7 +682,7 @@
             // Clear_I2C_rec_button
             // 
             this.Clear_I2C_rec_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Clear_I2C_rec_button.Location = new System.Drawing.Point(857, 151);
+            this.Clear_I2C_rec_button.Location = new System.Drawing.Point(1160, 156);
             this.Clear_I2C_rec_button.Margin = new System.Windows.Forms.Padding(2);
             this.Clear_I2C_rec_button.Name = "Clear_I2C_rec_button";
             this.Clear_I2C_rec_button.Size = new System.Drawing.Size(94, 38);
@@ -693,7 +695,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(528, 7);
+            this.label9.Location = new System.Drawing.Point(676, 12);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 20);
@@ -702,20 +704,20 @@
             // 
             // I2C_recive_textBox
             // 
-            this.I2C_recive_textBox.Location = new System.Drawing.Point(596, 7);
+            this.I2C_recive_textBox.Location = new System.Drawing.Point(749, 12);
             this.I2C_recive_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.I2C_recive_textBox.Multiline = true;
             this.I2C_recive_textBox.Name = "I2C_recive_textBox";
             this.I2C_recive_textBox.ReadOnly = true;
             this.I2C_recive_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.I2C_recive_textBox.Size = new System.Drawing.Size(354, 139);
+            this.I2C_recive_textBox.Size = new System.Drawing.Size(504, 139);
             this.I2C_recive_textBox.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 595);
+            this.ClientSize = new System.Drawing.Size(1268, 726);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";

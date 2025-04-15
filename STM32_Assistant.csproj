@@ -55,6 +55,9 @@
     <Compile Include="I2C\I2C_init.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Open_File\Open_File.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Uart\Uart_Component_control.cs">
       <SubType>Form</SubType>
     </Compile>
