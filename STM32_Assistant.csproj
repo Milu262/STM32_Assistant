@@ -76,7 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="I2C\EPPROM_Prosess\EEPROMWrite.cs">
+    <Compile Include="I2C\EEPROM_Prosess\EEPROMWrite.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="I2C\I2CProsess\I2C_Component_Control.cs">

@@ -12,16 +12,17 @@ namespace STM32_Assistant
         /// </summary>
         private void UpdateProgress(int current, int total)
         {
+            float percent = (current * 1000f) / total; // 
             if (EEPROMuiProcessBar.InvokeRequired)
             {
                 this.Invoke((MethodInvoker)delegate
                 {
-                    EEPROMuiProcessBar.Value = current * 100 / total;
+                    EEPROMuiProcessBar.Value = (int)percent;
                 });
             }
             else
             {
-                EEPROMuiProcessBar.Value = current * 100 / total;
+                EEPROMuiProcessBar.Value = (int)percent;
             }
         }
         /// <summary>

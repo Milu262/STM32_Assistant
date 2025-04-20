@@ -491,10 +491,10 @@
             // 
             // EEPROMuiProcessBar
             // 
-            this.EEPROMuiProcessBar.DecimalPlaces = 0;
             this.EEPROMuiProcessBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.EEPROMuiProcessBar.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.EEPROMuiProcessBar.Location = new System.Drawing.Point(384, 658);
+            this.EEPROMuiProcessBar.Maximum = 1000;
             this.EEPROMuiProcessBar.MinimumSize = new System.Drawing.Size(3, 3);
             this.EEPROMuiProcessBar.Name = "EEPROMuiProcessBar";
             this.EEPROMuiProcessBar.Radius = 10;
