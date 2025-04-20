@@ -12,10 +12,12 @@ namespace STM32_Assistant
     {
         // 创建一个不确定行数的二维数组（列表的列表）
         private List<List<byte>> File_content = new List<List<byte>>();
-        private void Open_EPPROM_program_button_Click(object sender, EventArgs e)
+        private void OpenFileButton_Click(object sender, EventArgs e)
         {
             fileContentTextBox.Clear();//清空文本框
-            File_content.Clear();                    //清空数组
+            File_content.Clear();     //清空数组
+            TxtFileWriteButton.Enabled = false;//禁用写入按钮
+            Write_EEPROM_button.Enabled = false;//禁用写入按钮
             OpenFileDialog openFileDialog = new OpenFileDialog();//创建一个OpenFileDialog对象
             openFileDialog.Filter = "BIN文件|*.bin|文本文件|*.txt|所有文件|*.*";//设置文件过滤器
             if (openFileDialog.ShowDialog() == DialogResult.OK)//如果用户点击了确定按钮
@@ -30,10 +32,12 @@ namespace STM32_Assistant
                 if (fileExtension.Equals("txt", StringComparison.OrdinalIgnoreCase))
                 {
                     TxT_File_Processs(filePath);//处理txt文件
+                    TxtFileWriteButton.Enabled = true;//启用写入按钮
                 }
                 else if (fileExtension.Equals("bin", StringComparison.OrdinalIgnoreCase))
                 {
                     Bin_File_Processs(filePath);// 处理bin文件
+                    Write_EEPROM_button.Enabled = true;//启用写入按钮
                 }
                 else
                 {
@@ -50,7 +54,7 @@ namespace STM32_Assistant
             string hexPattern = @"^[0-9a-fA-F]+$";
             return Regex.IsMatch(input, hexPattern);
         }
-
+        //Bin文件处理函数
         private void Bin_File_Processs(string FilePath)
         {
             //处理bin文件
@@ -90,7 +94,7 @@ namespace STM32_Assistant
                 MessageBox.Show("读取文件时出错: " + ex.Message);
             }
         }
-
+        //TXT文件处理函数
         private void TxT_File_Processs(string FilePath)
         {
             // 处理txt文件

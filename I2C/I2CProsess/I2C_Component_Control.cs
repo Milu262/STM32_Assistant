@@ -89,7 +89,7 @@ namespace STM32_Assistant
                     MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-
+                //待加入对于串口接收到数据的处理
 
             }
             else//16位寄存器地址模式

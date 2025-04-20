@@ -58,10 +58,18 @@
             this.Serial_port_comboBox = new System.Windows.Forms.ComboBox();
             this.uart_uart_control_button = new System.Windows.Forms.Button();
             this.I2C_tabPage = new System.Windows.Forms.TabPage();
-            this.Save_EPPROM_program_button = new System.Windows.Forms.Button();
+            this.EEPROMuiProcessBar = new Sunny.UI.UIProcessBar();
+            this.TxtFileWriteButton = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.EEPROM_adr_textBox = new System.Windows.Forms.TextBox();
+            this.Read_EEPROM_button = new System.Windows.Forms.Button();
+            this.Write_EEPROM_button = new System.Windows.Forms.Button();
+            this.EEPROM_comboBox = new System.Windows.Forms.ComboBox();
+            this.SaveFileButton = new System.Windows.Forms.Button();
             this.fileContentTextBox = new System.Windows.Forms.TextBox();
             this.EPPROM_program_file_path_textBox = new System.Windows.Forms.TextBox();
-            this.Open_EPPROM_program_button = new System.Windows.Forms.Button();
+            this.OpenFileButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.find_i2c_device_button = new System.Windows.Forms.Button();
@@ -80,6 +88,7 @@
             this.Clear_I2C_rec_button = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.I2C_recive_textBox = new System.Windows.Forms.TextBox();
+            this.SPI_TabPage = new System.Windows.Forms.TabPage();
             this.Uart_serialPort = new System.IO.Ports.SerialPort(this.components);
             this.I2C_serialPort = new System.IO.Ports.SerialPort(this.components);
             groupBox1 = new System.Windows.Forms.GroupBox();
@@ -173,6 +182,7 @@
             // 
             this.tabControl1.Controls.Add(this.UART_tabPage);
             this.tabControl1.Controls.Add(this.I2C_tabPage);
+            this.tabControl1.Controls.Add(this.SPI_TabPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
@@ -441,10 +451,18 @@
             // 
             // I2C_tabPage
             // 
-            this.I2C_tabPage.Controls.Add(this.Save_EPPROM_program_button);
+            this.I2C_tabPage.Controls.Add(this.EEPROMuiProcessBar);
+            this.I2C_tabPage.Controls.Add(this.TxtFileWriteButton);
+            this.I2C_tabPage.Controls.Add(this.label17);
+            this.I2C_tabPage.Controls.Add(this.label16);
+            this.I2C_tabPage.Controls.Add(this.EEPROM_adr_textBox);
+            this.I2C_tabPage.Controls.Add(this.Read_EEPROM_button);
+            this.I2C_tabPage.Controls.Add(this.Write_EEPROM_button);
+            this.I2C_tabPage.Controls.Add(this.EEPROM_comboBox);
+            this.I2C_tabPage.Controls.Add(this.SaveFileButton);
             this.I2C_tabPage.Controls.Add(this.fileContentTextBox);
             this.I2C_tabPage.Controls.Add(this.EPPROM_program_file_path_textBox);
-            this.I2C_tabPage.Controls.Add(this.Open_EPPROM_program_button);
+            this.I2C_tabPage.Controls.Add(this.OpenFileButton);
             this.I2C_tabPage.Controls.Add(groupBox1);
             this.I2C_tabPage.Controls.Add(this.label15);
             this.I2C_tabPage.Controls.Add(this.label14);
@@ -471,16 +489,113 @@
             this.I2C_tabPage.Text = "I2C";
             this.I2C_tabPage.UseVisualStyleBackColor = true;
             // 
-            // Save_EPPROM_program_button
+            // EEPROMuiProcessBar
             // 
-            this.Save_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Save_EPPROM_program_button.Location = new System.Drawing.Point(618, 526);
-            this.Save_EPPROM_program_button.Margin = new System.Windows.Forms.Padding(2);
-            this.Save_EPPROM_program_button.Name = "Save_EPPROM_program_button";
-            this.Save_EPPROM_program_button.Size = new System.Drawing.Size(109, 35);
-            this.Save_EPPROM_program_button.TabIndex = 30;
-            this.Save_EPPROM_program_button.Text = "保存EPPROM程序";
-            this.Save_EPPROM_program_button.UseVisualStyleBackColor = true;
+            this.EEPROMuiProcessBar.DecimalPlaces = 0;
+            this.EEPROMuiProcessBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.EEPROMuiProcessBar.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.EEPROMuiProcessBar.Location = new System.Drawing.Point(384, 658);
+            this.EEPROMuiProcessBar.MinimumSize = new System.Drawing.Size(3, 3);
+            this.EEPROMuiProcessBar.Name = "EEPROMuiProcessBar";
+            this.EEPROMuiProcessBar.Radius = 10;
+            this.EEPROMuiProcessBar.Size = new System.Drawing.Size(320, 29);
+            this.EEPROMuiProcessBar.TabIndex = 37;
+            this.EEPROMuiProcessBar.Text = "uiProcessBar1";
+            // 
+            // TxtFileWriteButton
+            // 
+            this.TxtFileWriteButton.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtFileWriteButton.Location = new System.Drawing.Point(394, 370);
+            this.TxtFileWriteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtFileWriteButton.Name = "TxtFileWriteButton";
+            this.TxtFileWriteButton.Size = new System.Drawing.Size(320, 35);
+            this.TxtFileWriteButton.TabIndex = 36;
+            this.TxtFileWriteButton.Text = "文件写";
+            this.TxtFileWriteButton.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(390, 555);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(131, 20);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "EEPROM容量大小";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(390, 516);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(168, 20);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "EEPROM设备地址    0x:";
+            // 
+            // EEPROM_adr_textBox
+            // 
+            this.EEPROM_adr_textBox.Location = new System.Drawing.Point(567, 516);
+            this.EEPROM_adr_textBox.Margin = new System.Windows.Forms.Padding(2);
+            this.EEPROM_adr_textBox.MaxLength = 2;
+            this.EEPROM_adr_textBox.Name = "EEPROM_adr_textBox";
+            this.EEPROM_adr_textBox.Size = new System.Drawing.Size(92, 21);
+            this.EEPROM_adr_textBox.TabIndex = 33;
+            this.EEPROM_adr_textBox.TextChanged += new System.EventHandler(this.EEPROM_adr_textBox_TextChanged);
+            // 
+            // Read_EEPROM_button
+            // 
+            this.Read_EEPROM_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Read_EEPROM_button.Location = new System.Drawing.Point(557, 601);
+            this.Read_EEPROM_button.Margin = new System.Windows.Forms.Padding(2);
+            this.Read_EEPROM_button.Name = "Read_EEPROM_button";
+            this.Read_EEPROM_button.Size = new System.Drawing.Size(147, 35);
+            this.Read_EEPROM_button.TabIndex = 32;
+            this.Read_EEPROM_button.Text = "读EPPROM程序";
+            this.Read_EEPROM_button.UseVisualStyleBackColor = true;
+            // 
+            // Write_EEPROM_button
+            // 
+            this.Write_EEPROM_button.Enabled = false;
+            this.Write_EEPROM_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Write_EEPROM_button.Location = new System.Drawing.Point(384, 601);
+            this.Write_EEPROM_button.Margin = new System.Windows.Forms.Padding(2);
+            this.Write_EEPROM_button.Name = "Write_EEPROM_button";
+            this.Write_EEPROM_button.Size = new System.Drawing.Size(147, 35);
+            this.Write_EEPROM_button.TabIndex = 31;
+            this.Write_EEPROM_button.Text = "写EPPROM程序";
+            this.Write_EEPROM_button.UseVisualStyleBackColor = true;
+            this.Write_EEPROM_button.Click += new System.EventHandler(this.Write_EEPROM_button_Click);
+            // 
+            // EEPROM_comboBox
+            // 
+            this.EEPROM_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EEPROM_comboBox.FormattingEnabled = true;
+            this.EEPROM_comboBox.Items.AddRange(new object[] {
+            "24LC02",
+            "24LC04",
+            "24LC08",
+            "24LC16",
+            "24LC32",
+            "24LC64"});
+            this.EEPROM_comboBox.Location = new System.Drawing.Point(567, 555);
+            this.EEPROM_comboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.EEPROM_comboBox.Name = "EEPROM_comboBox";
+            this.EEPROM_comboBox.Size = new System.Drawing.Size(92, 20);
+            this.EEPROM_comboBox.TabIndex = 10;
+            // 
+            // SaveFileButton
+            // 
+            this.SaveFileButton.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SaveFileButton.Location = new System.Drawing.Point(394, 331);
+            this.SaveFileButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SaveFileButton.Name = "SaveFileButton";
+            this.SaveFileButton.Size = new System.Drawing.Size(320, 35);
+            this.SaveFileButton.TabIndex = 30;
+            this.SaveFileButton.Text = "保存文件";
+            this.SaveFileButton.UseVisualStyleBackColor = true;
             // 
             // fileContentTextBox
             // 
@@ -497,44 +612,46 @@
             // EPPROM_program_file_path_textBox
             // 
             this.EPPROM_program_file_path_textBox.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.EPPROM_program_file_path_textBox.Location = new System.Drawing.Point(407, 459);
+            this.EPPROM_program_file_path_textBox.Location = new System.Drawing.Point(394, 202);
             this.EPPROM_program_file_path_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.EPPROM_program_file_path_textBox.Multiline = true;
             this.EPPROM_program_file_path_textBox.Name = "EPPROM_program_file_path_textBox";
+            this.EPPROM_program_file_path_textBox.ReadOnly = true;
+            this.EPPROM_program_file_path_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.EPPROM_program_file_path_textBox.Size = new System.Drawing.Size(320, 63);
             this.EPPROM_program_file_path_textBox.TabIndex = 28;
             // 
-            // Open_EPPROM_program_button
+            // OpenFileButton
             // 
-            this.Open_EPPROM_program_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Open_EPPROM_program_button.Location = new System.Drawing.Point(407, 526);
-            this.Open_EPPROM_program_button.Margin = new System.Windows.Forms.Padding(2);
-            this.Open_EPPROM_program_button.Name = "Open_EPPROM_program_button";
-            this.Open_EPPROM_program_button.Size = new System.Drawing.Size(109, 35);
-            this.Open_EPPROM_program_button.TabIndex = 27;
-            this.Open_EPPROM_program_button.Text = "加载EPPROM程序";
-            this.Open_EPPROM_program_button.UseVisualStyleBackColor = true;
-            this.Open_EPPROM_program_button.Click += new System.EventHandler(this.Open_EPPROM_program_button_Click);
+            this.OpenFileButton.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.OpenFileButton.Location = new System.Drawing.Point(394, 292);
+            this.OpenFileButton.Margin = new System.Windows.Forms.Padding(2);
+            this.OpenFileButton.Name = "OpenFileButton";
+            this.OpenFileButton.Size = new System.Drawing.Size(320, 35);
+            this.OpenFileButton.TabIndex = 27;
+            this.OpenFileButton.Text = "加载文件";
+            this.OpenFileButton.UseVisualStyleBackColor = true;
+            this.OpenFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(117, 155);
+            this.label15.Font = new System.Drawing.Font("等线", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(247, 64);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 20);
+            this.label15.Size = new System.Drawing.Size(113, 19);
             this.label15.TabIndex = 25;
             this.label15.Text = "SCL引角:  B8";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(8, 155);
+            this.label14.Font = new System.Drawing.Font("等线", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(247, 26);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(100, 20);
+            this.label14.Size = new System.Drawing.Size(117, 19);
             this.label14.TabIndex = 24;
             this.label14.Text = "SDA引角:  B9";
             // 
@@ -713,6 +830,16 @@
             this.I2C_recive_textBox.Size = new System.Drawing.Size(504, 139);
             this.I2C_recive_textBox.TabIndex = 10;
             // 
+            // SPI_TabPage
+            // 
+            this.SPI_TabPage.Location = new System.Drawing.Point(4, 22);
+            this.SPI_TabPage.Name = "SPI_TabPage";
+            this.SPI_TabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.SPI_TabPage.Size = new System.Drawing.Size(1260, 700);
+            this.SPI_TabPage.TabIndex = 2;
+            this.SPI_TabPage.Text = "SPI";
+            this.SPI_TabPage.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -790,10 +917,19 @@
         private System.Windows.Forms.Button find_i2c_device_button;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button Open_EPPROM_program_button;
+        private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.TextBox EPPROM_program_file_path_textBox;
         private System.Windows.Forms.TextBox fileContentTextBox;
-        private System.Windows.Forms.Button Save_EPPROM_program_button;
+        private System.Windows.Forms.Button SaveFileButton;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox EEPROM_adr_textBox;
+        private System.Windows.Forms.Button Read_EEPROM_button;
+        private System.Windows.Forms.Button Write_EEPROM_button;
+        private System.Windows.Forms.ComboBox EEPROM_comboBox;
+        private System.Windows.Forms.Button TxtFileWriteButton;
+        private System.Windows.Forms.TabPage SPI_TabPage;
+        private Sunny.UI.UIProcessBar EEPROMuiProcessBar;
     }
 }
 
