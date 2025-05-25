@@ -31,7 +31,7 @@ namespace STM32_Assistant
         private async Task  SafeSerialWrite(byte[] data, int length)
         {
             await I2C_serialPort.BaseStream.WriteAsync(data, 0, length);
-            await Task.Delay(10); // 动态延时[3](@ref)
+            await Task.Delay(5); // 动态延时[3](@ref)
         }
         /// <summary>
         /// 发送EEPROM内容到串口

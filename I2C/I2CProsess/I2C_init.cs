@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO.Ports;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace STM32_Assistant
@@ -22,7 +24,7 @@ namespace STM32_Assistant
         private const byte ReciveFrameHead = 0xAA;
 
         // 数据帧的最大长度（根据你的协议定义）
-        private const int MaxFrameLength = 256;
+        private const int MaxFrameLength = 256+10;
 
         public void Serial_I2C_init()
         {
@@ -53,34 +55,57 @@ namespace STM32_Assistant
             // 初始化全局数组
             globalDataArray = new byte[MaxFrameLength];
             //添加串口接收处理函数
-            I2C_serialPort.DataReceived += new SerialDataReceivedEventHandler(I2C_serialPort_DataReceived);
+            I2C_serialPort.DataReceived += new SerialDataReceivedEventHandler(I2C_serialPort_DataReceivedAsync);
         }
 
-        private void I2C_serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private async void I2C_serialPort_DataReceivedAsync(object sender, SerialDataReceivedEventArgs e)
         {
-            //string uart_rec_str = I2C_serialPort.ReadExisting(); // 读取串口数据
-            //this.Invoke(new EventHandler(delegate //防止线程报错
-            //{
-            //    I2C_recive_textBox.AppendText(uart_rec_str); // 显示接收数据
-            //}));
-            //uart_rec_buffer = uart_rec_str;//更新接收缓冲区
+            //int bytesRead = I2C_serialPort.BytesToRead;
+            //byte[] buffer = new byte[bytesRead];
+            ////I2C_serialPort.Read(buffer, 0, bytesRead);
+            //await I2C_serialPort.BaseStream.ReadAsync(buffer, 0, bytesRead);
 
-            int bytesRead = I2C_serialPort.BytesToRead;
-            byte[] buffer = new byte[bytesRead];
-            I2C_serialPort.Read(buffer, 0, bytesRead);
-            dataFrameReceivedFlag = false;
+            List<byte> receivedData = new List<byte>();
+            int bytesRead;
+            try
+            {
+                do
+                {
+                    bytesRead = I2C_serialPort.BytesToRead;
+                    byte[] tempBuffer = new byte[bytesRead];
+                    if (bytesRead == 0)
+                    {
+                        break;
+                    }
+                    await I2C_serialPort.BaseStream.ReadAsync(tempBuffer, 0, bytesRead);
+                    receivedData.AddRange(tempBuffer);
+
+                    //receivedData.AddRange(tempBuffer);
+                } while (bytesRead > 0);
+            }
+            catch ( Exception ex)
+            {
+                //处理异常
+                MessageBox.Show("读取串口数据时发生错误：" + ex.Message);
+            }
+
+
+
+            byte[] buffer = receivedData.ToArray();
             // 检查帧头
             if (buffer.Length > 0 && buffer[0] == ReciveFrameHead)
             {
+
                 // 加锁以确保线程安全
                 lock (lockObject)
-                {                          
+                {
                     // 帧头正确，处理数据
-                    Array.Copy(buffer, 0, globalDataArray, 0, bytesRead);//将数据复制到全局数组中
+                    Array.Copy(buffer, 0, globalDataArray, 0, buffer.Length);//将数据复制到全局数组中
                     // 设置标志位，表示已接收到完整的数据帧
                     dataFrameReceivedFlag = true;
                 }
-            }
+
+        }
             else
             {
                 //string uart_rec_str = I2C_serialPort.ReadExisting(); // 读取串口数据

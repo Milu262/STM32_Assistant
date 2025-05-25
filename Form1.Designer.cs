@@ -91,6 +91,8 @@
             this.SPI_TabPage = new System.Windows.Forms.TabPage();
             this.Uart_serialPort = new System.IO.Ports.SerialPort(this.components);
             this.I2C_serialPort = new System.IO.Ports.SerialPort(this.components);
+            this.SPI_serialPort = new System.IO.Ports.SerialPort(this.components);
+            this.uiComboBox1 = new Sunny.UI.UIComboBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -99,6 +101,7 @@
             this.panel1.SuspendLayout();
             this.I2C_tabPage.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.SPI_TabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -555,6 +558,7 @@
             this.Read_EEPROM_button.TabIndex = 32;
             this.Read_EEPROM_button.Text = "读EPPROM程序";
             this.Read_EEPROM_button.UseVisualStyleBackColor = true;
+            this.Read_EEPROM_button.Click += new System.EventHandler(this.Read_EEPROM_button_Click);
             // 
             // Write_EEPROM_button
             // 
@@ -832,6 +836,7 @@
             // 
             // SPI_TabPage
             // 
+            this.SPI_TabPage.Controls.Add(this.uiComboBox1);
             this.SPI_TabPage.Location = new System.Drawing.Point(4, 22);
             this.SPI_TabPage.Name = "SPI_TabPage";
             this.SPI_TabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -839,6 +844,24 @@
             this.SPI_TabPage.TabIndex = 2;
             this.SPI_TabPage.Text = "SPI";
             this.SPI_TabPage.UseVisualStyleBackColor = true;
+            // 
+            // uiComboBox1
+            // 
+            this.uiComboBox1.DataSource = null;
+            this.uiComboBox1.FillColor = System.Drawing.Color.White;
+            this.uiComboBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiComboBox1.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.uiComboBox1.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.uiComboBox1.Location = new System.Drawing.Point(102, 33);
+            this.uiComboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiComboBox1.MinimumSize = new System.Drawing.Size(63, 0);
+            this.uiComboBox1.Name = "uiComboBox1";
+            this.uiComboBox1.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.uiComboBox1.Size = new System.Drawing.Size(150, 29);
+            this.uiComboBox1.SymbolSize = 24;
+            this.uiComboBox1.TabIndex = 0;
+            this.uiComboBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiComboBox1.Watermark = "";
             // 
             // Form1
             // 
@@ -863,6 +886,7 @@
             this.I2C_tabPage.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.SPI_TabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -930,6 +954,8 @@
         private System.Windows.Forms.Button TxtFileWriteButton;
         private System.Windows.Forms.TabPage SPI_TabPage;
         private Sunny.UI.UIProcessBar EEPROMuiProcessBar;
+        private Sunny.UI.UIComboBox uiComboBox1;
+        private System.IO.Ports.SerialPort SPI_serialPort;
     }
 }
 
