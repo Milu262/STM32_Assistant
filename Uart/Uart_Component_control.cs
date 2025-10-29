@@ -51,7 +51,7 @@ namespace STM32_Assistant
         {
             if (uart_rec_hex_radioButton.Checked)
             {
-                UpdateTextBoxForHexInput(recive_textBox);
+                UpdateTextBoxForHexInput(uiRichTextBox1);
             }
         }
         //清除发送区
@@ -62,11 +62,11 @@ namespace STM32_Assistant
         //清除接收区
         private void Clear_rec_textbox_button_Click(object sender, EventArgs e)
         {
-            recive_textBox.Clear();
+            uiRichTextBox1.Clear();
         }
 
         //发送区HEX文本框格式化
-        public void UpdateTextBoxForHexInput(TextBox textBox)
+        public void UpdateTextBoxForHexInput(dynamic textBox)
         {
             // 获取当前 TextBox 的文本
             string input = textBox.Text;

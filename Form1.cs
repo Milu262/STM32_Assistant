@@ -184,26 +184,32 @@ namespace STM32_Assistant
                         //定义一个每行16个字节的二维数组
                         byte[,] ReciveDataArray = new byte[16, 16];
                         //将ReciveData[i]的256个字节存入ReciveDataArray中
-                        for (int row = 0; row < 16; row++)
-                        {
-                            for (int col = 0; col < 16; col++)
-                            {
-                                ReciveDataArray[row, col] = ReciveData[i][row * 16 + col];
-                            }
-                        }
+                        Buffer.BlockCopy(ReciveData[i], 0, ReciveDataArray, 0, ReciveData[i].Length);
 
-                        //在中fileContentTextBox显示ReciveDataArray数组
+                        // 使用单次 AppendText 调用代替多次调用，减少 UI 更新次数
+                        StringBuilder sb = new StringBuilder();
                         for (int row = 0; row < 16; row++)
                         {
                             for (int col = 0; col < 16; col++)
                             {
                                 // 将每个字节转换为两位的十六进制字符串
                                 string hexValue = ReciveDataArray[row, col].ToString("X2");
-                                // 将十六进制字符串添加到fileContentTextBox中
-                                fileContentTextBox.AppendText(hexValue + " ");
+                                // 将十六进制字符串添加到 StringBuilder 中
+                                sb.Append(hexValue + " ");
                             }
                             // 在每行结束后添加一个换行符
-                            fileContentTextBox.AppendText(Environment.NewLine);
+                            sb.AppendLine();
+                        }
+                        if (this.InvokeRequired)
+                        {
+                            this.Invoke(new Action(() =>
+                            {
+                                fileContentTextBox.AppendText(sb.ToString());
+                            }));
+                        }
+                        else
+                        {
+                            fileContentTextBox.AppendText(sb.ToString());
                         }
                         //string ReciveDataString = BitConverter.ToString(ReciveData[i]);
                         //fileContentTextBox.AppendText(ReciveDataString);
@@ -239,7 +245,7 @@ namespace STM32_Assistant
                         UartSendData[6] = (byte)(AdressRegist & 0x00FF);//寄存器地址低字节
                     }
                 }
-                ReciveDataProcess(ReciveData);//处理接收到的数据
+                //ReciveDataProcess(ReciveData);//处理接收到的数据
             }
             catch (Exception ex)
             {

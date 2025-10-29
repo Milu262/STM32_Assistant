@@ -40,7 +40,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Clear_rec_textbox_button = new System.Windows.Forms.Button();
-            this.recive_textBox = new System.Windows.Forms.TextBox();
             this.Uart_send_button = new System.Windows.Forms.Button();
             this.Clear_send_textbox_button = new System.Windows.Forms.Button();
             this.Uart_send_textBox = new System.Windows.Forms.TextBox();
@@ -89,10 +88,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.I2C_recive_textBox = new System.Windows.Forms.TextBox();
             this.SPI_TabPage = new System.Windows.Forms.TabPage();
+            this.uiComboBox1 = new Sunny.UI.UIComboBox();
             this.Uart_serialPort = new System.IO.Ports.SerialPort(this.components);
             this.I2C_serialPort = new System.IO.Ports.SerialPort(this.components);
             this.SPI_serialPort = new System.IO.Ports.SerialPort(this.components);
-            this.uiComboBox1 = new Sunny.UI.UIComboBox();
+            this.uiRichTextBox1 = new Sunny.UI.UIRichTextBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -196,10 +196,10 @@
             // 
             // UART_tabPage
             // 
+            this.UART_tabPage.Controls.Add(this.uiRichTextBox1);
             this.UART_tabPage.Controls.Add(this.label6);
             this.UART_tabPage.Controls.Add(this.label5);
             this.UART_tabPage.Controls.Add(this.Clear_rec_textbox_button);
-            this.UART_tabPage.Controls.Add(this.recive_textBox);
             this.UART_tabPage.Controls.Add(this.Uart_send_button);
             this.UART_tabPage.Controls.Add(this.Clear_send_textbox_button);
             this.UART_tabPage.Controls.Add(this.Uart_send_textBox);
@@ -254,18 +254,6 @@
             this.Clear_rec_textbox_button.Text = "清除";
             this.Clear_rec_textbox_button.UseVisualStyleBackColor = true;
             this.Clear_rec_textbox_button.Click += new System.EventHandler(this.Clear_rec_textbox_button_Click);
-            // 
-            // recive_textBox
-            // 
-            this.recive_textBox.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.recive_textBox.Location = new System.Drawing.Point(579, 0);
-            this.recive_textBox.Margin = new System.Windows.Forms.Padding(2);
-            this.recive_textBox.Multiline = true;
-            this.recive_textBox.Name = "recive_textBox";
-            this.recive_textBox.ReadOnly = true;
-            this.recive_textBox.Size = new System.Drawing.Size(674, 523);
-            this.recive_textBox.TabIndex = 16;
-            this.recive_textBox.TextChanged += new System.EventHandler(this.recive_textBox_TextChanged);
             // 
             // Uart_send_button
             // 
@@ -863,6 +851,21 @@
             this.uiComboBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiComboBox1.Watermark = "";
             // 
+            // uiRichTextBox1
+            // 
+            this.uiRichTextBox1.FillColor = System.Drawing.Color.White;
+            this.uiRichTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiRichTextBox1.Location = new System.Drawing.Point(571, 7);
+            this.uiRichTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiRichTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiRichTextBox1.Name = "uiRichTextBox1";
+            this.uiRichTextBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.uiRichTextBox1.ReadOnly = true;
+            this.uiRichTextBox1.ShowText = false;
+            this.uiRichTextBox1.Size = new System.Drawing.Size(689, 495);
+            this.uiRichTextBox1.TabIndex = 20;
+            this.uiRichTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -915,7 +918,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton uart_send_hex_radioButton;
         private System.Windows.Forms.Button Clear_rec_textbox_button;
-        private System.Windows.Forms.TextBox recive_textBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox Band_rate_I2C_comboBox;
@@ -956,6 +958,7 @@
         private Sunny.UI.UIProcessBar EEPROMuiProcessBar;
         private Sunny.UI.UIComboBox uiComboBox1;
         private System.IO.Ports.SerialPort SPI_serialPort;
+        private Sunny.UI.UIRichTextBox uiRichTextBox1;
     }
 }
 
