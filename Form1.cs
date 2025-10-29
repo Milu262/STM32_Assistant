@@ -162,11 +162,11 @@ namespace STM32_Assistant
                             //延迟10ms
                             await Task.Delay(20);
                             DelayTime++;
-                            if (DelayTime == 10)
+                            if (DelayTime == 40)
                             {
                                 DelayTime = 0;
                                 MessageBox.Show("接收数据超时", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                //为什么一直显示接收数据超时？
+                             
                                 //
                                 return false;
                             }

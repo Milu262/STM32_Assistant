@@ -26,7 +26,7 @@ namespace STM32_Assistant
         private const byte ReciveFrameHead = 0xFA;
 
         // 数据帧的最大长度（根据你的协议定义）
-        private const int MaxFrameLength = 256+10;
+        private const int MaxFrameLength = 252+10;
 
         // 全局缓冲区：累积当前数据段的所有字节
         private readonly List<byte> _currentDataSegment = new List<byte>();
@@ -75,6 +75,7 @@ namespace STM32_Assistant
         {
             // 加锁取出当前数据段并清空缓冲区
             byte[] dataSegment;
+            //Console.WriteLine($"[IdleTimer_Elapsed函数]  _currentDataSegment {_currentDataSegment.Count}");
             lock (lockObject)
             {
                 dataSegment = _currentDataSegment.ToArray();
@@ -82,23 +83,26 @@ namespace STM32_Assistant
             }
 
             if (dataSegment.Length == 0) return; // 空数据段不处理
-
+            //Console显示dataSegment数组
+            Console.WriteLine($"[IdleTimer_Elapsed函数]  dataSegment {BitConverter.ToString(dataSegment)}");
             // 判断数据段类型（仅根据第一个字节）
             if (dataSegment[0] == ReciveFrameHead)
             {
                 // 处理特殊帧（需满足最小长度）
-                if (dataSegment.Length <= MaxFrameLength)
+                if (dataSegment.Length >= MaxFrameLength)
                 {
                     lock (lockObject)
                     {
                         Array.Copy(dataSegment, 0, globalDataArray, 0, MaxFrameLength);
                         dataFrameReceivedFlag = true; // 标记帧接收完成
                     }
+                    Console.WriteLine($"[IdleTimer_Elapsed函数]  dataFrameReceivedFlag {dataFrameReceivedFlag}");
+                    Console.WriteLine($"[IdleTimer_Elapsed函数]  globalDataArray {BitConverter.ToString(globalDataArray)}");
                 }
                 else
                 {
                     // 特殊帧长度不足，作为异常debug信息显示（可选）
-                    string errorMsg = $"不完整的特殊帧（长度：{dataSegment.Length}）：{BitConverter.ToString(dataSegment)}";
+                    string errorMsg = $"不完整的特殊帧（长度：{dataSegment.Length}）：{BitConverter.ToString(dataSegment)}\n";
                     ShowDebugData(Encoding.Default.GetBytes(errorMsg));
                 }
             }
@@ -238,6 +242,8 @@ namespace STM32_Assistant
 
                 if (receivedData.Count == 0) return;
 
+                // 调试输出：确认标志位被设置
+                Console.WriteLine($"[接收线程] 数据长度：{receivedData.Count}");
                 // 加锁累积数据到当前数据段
                 lock (lockObject)
                 {
